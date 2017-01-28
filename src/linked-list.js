@@ -42,7 +42,14 @@ class LinkedList {
 
     }
 
-    at(index) {}
+    at(index) {  if (index >= 0 && index < this._length) {
+      var node = this._head;
+      while (index--) {
+        node = node.next;
+      }
+      return node;
+    
+    }
 
     insertAt(index, data) {}
 
