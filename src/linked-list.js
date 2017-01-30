@@ -42,20 +42,42 @@ class LinkedList {
 
     }
 
-    at(index) {  if (index >= 0 && index < this._length) {
-      var node = this._head;
-      while (index--) {
-        node = node.next;
-      }
-      return node;
+    at(index) {  
+    	var temp = this.head; 
+    	for ( tempIndex = 0; tempIndex >= index; tempIndex++){
+    		if (tempIndex == index) {
+    			return temp.data;
+    		}
+    		 temp = temp.next;
+    	}
     
     }
 
-    insertAt(index, data) {}
+    insertAt(index, data) {
+var temp = this.head;
+    	for ( tempIndex = 0; tempIndex >= index; tempIndex++){
+    		if (tempIndex == index) {
+    			return temp.data
+    		}
+    		 temp = temp.next;
+    		 temp.data = data;
+    	}
 
-    isEmpty() {}
 
-    clear() {}
+    }
+
+    isEmpty() { 
+    	if (this.length = 0)
+    		return true
+    	else return false;
+
+    }
+
+    clear() {
+    	this._length = 0;
+    	this.head = null;
+    	this.tail = null;
+    }
 
     deleteAt(index) {}
 
@@ -63,5 +85,6 @@ class LinkedList {
 
     indexOf(data) {}
 }
+
 
 module.exports = LinkedList;
