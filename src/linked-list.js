@@ -11,17 +11,17 @@ class LinkedList {
     	var node = new Node(data);
 
     if (this._length) {
-        this.tail.next = node;
-        node.previous = this.tail;
-        this.tail = node;
-    } else {
         this.head = node;
-        this.tail = node;
+        
+    } else {
+        this.head.next = node;
+        node.prev = this.head;
+        this.head = node;
     }
 
     this._length++;
 
-    return node;
+    return this;
 
     }
 
@@ -44,8 +44,8 @@ class LinkedList {
 
     at(index) {  
     	var temp = this.head; 
-    	for ( tempIndex = 0; tempIndex >= this.length; tempIndex++){
-    		if (tempIndex == index) {
+    	for ( tempIndex = 0; tempIndex <= this.length; tempIndex ++){
+    		if (tempIndex == this.length) {
     			return temp.data
     			break;
     		}
@@ -56,8 +56,8 @@ class LinkedList {
 
     insertAt(index, data) {
 var temp = this.head;
-    	for ( tempIndex = 0; tempIndex >= this.length; tempIndex++){
-    		if (tempIndex == index) {
+    	for ( tempIndex = 0; tempIndex <= this.length; tempIndex ++){
+    		if (tempIndex == this.length) {
     			return temp.data
     			break;
     		}
