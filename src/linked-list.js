@@ -44,7 +44,7 @@ class LinkedList {
 
     at(index) {  
     	var temp = this.head; 
-    	for ( tempIndex = 0; tempIndex == temp; tempIndex++){
+    	for ( tempIndex = 0; tempIndex >= this.length; tempIndex++){
     		if (tempIndex == index) {
     			return temp.data
     			break;
@@ -56,7 +56,7 @@ class LinkedList {
 
     insertAt(index, data) {
 var temp = this.head;
-    	for ( tempIndex = 0; tempIndex == temp; tempIndex++){
+    	for ( tempIndex = 0; tempIndex >= this.length; tempIndex++){
     		if (tempIndex == index) {
     			return temp.data
     			break;
