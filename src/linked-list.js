@@ -10,7 +10,7 @@ class LinkedList {
     }
 
     append(data) {
-    	var node = newNode (data);
+    	var node = new Node(data);
     	if (this.length == 0)
     	this.tail = node
     else 
