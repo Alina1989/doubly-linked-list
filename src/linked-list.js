@@ -11,10 +11,10 @@ class LinkedList {
 
     append(data) {
 
-           var node = new Node (data), tempNode = this._tail;
-        if (this.length) { 
+           var node = new Node (data), current = this._tail;
+        if (this.length) {
             this._tail = node;
-            this._tail.prev = tempNode;
+            this._tail.prev = current;
             this._tail.prev.next = this._tail;
         } else {
             this._tail = node;
@@ -24,36 +24,25 @@ class LinkedList {
         return this._tail;
 }
 
-        head() {
-        return this._head ? this._head.data : null;
+    head() { return this._head.data;
+    	
+
     }
 
-    tail() {
-        return this._tail ? this._tail.data : null;
-    }
+    tail() { return this._tail.data;}
 
-    at(index) {
-
-        let tempNode = this._head, tempIndex = 0;
-        while (tempNode) {
-            if (index === tempIndex) { return tempNode.data;}
-            tempNode = tempNode.next;
-            tempIndex++;
-        }
-    }
-
-    insertAt(index, data) {
-        let tempNode = this._head, tempIndex = 0;
-        while (tempNode) {
-            if (index === tempIndex) {
-                tempNode.data = data;
-                break;
-            }
-            tempNode = tempNode.next;
-            tempIndex++;
-        }
-        return this;
+    at(index) { 
+     var current = this._head;
+     while (current.data != index) {
+     	if (current.next == null)
+     		return null;
+     	else current = current.next;
+     } 
+     return current.data;
 }
+
+    insertAt(index, data) {}
+
     isEmpty() {}
 
     clear() {}
