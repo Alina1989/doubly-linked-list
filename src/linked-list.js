@@ -11,15 +11,15 @@ class LinkedList {
 
     append(data) {
 
-    	        var node = new Node (data), current = this._tail;
-        if (this.length) {
-            this._tail = node;
-            this._tail.prev = current;
-            this._tail.prev.next = this._tail;
-        } else {
-            this._tail = node;
-            this._head = node;
+   var node = newNode (data);
+    	if (this.length)
+    	this._tail = node
+    else 
+    	{this._head.previos = node;
+        node.next = this._tail;
+        this._head = node;
         }
+
         this.length++;
         return this;
 
