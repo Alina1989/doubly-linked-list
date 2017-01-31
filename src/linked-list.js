@@ -10,7 +10,7 @@ class LinkedList {
     }
 
     append(data) {
-    	
+
     	var node = new Node(data); current = this.tail
     	if (this.length == 0) {
     	this.tail = node;
@@ -20,7 +20,8 @@ class LinkedList {
     	this.head = node;
         this.tail = node; }
 
-
+this.length++;
+return this;
     }
 
     head() { if (this.head = data)
