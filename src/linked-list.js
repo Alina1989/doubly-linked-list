@@ -12,7 +12,7 @@ class LinkedList {
     append(data) {
 
            var node = new Node (data), tempNode = this._tail;
-        if (this.length) {
+        if (this.length) { 
             this._tail = node;
             this._tail.prev = tempNode;
             this._tail.prev.next = this._tail;
@@ -24,30 +24,36 @@ class LinkedList {
         return this._tail;
 }
 
-    head() { if (this._head == data)
-    	return this._head;
-    	else (this._head = null)
-    		return this._head
-
+        head() {
+        return this._head ? this._head.data : null;
     }
 
-    tail() { if (this._tail == data)
-    	return this._tail;
-    	else (this._tail = null)
-    		return this._tail}
+    tail() {
+        return this._tail ? this._tail.data : null;
+    }
 
-    at(index) { 
-     var current = this._head;
-     while (current.data != index) {
-     	if (current.next == null)
-     		return null;
-     	else current = current.next;
-     } 
-     return current;
+    at(index) {
+
+        let tempNode = this._head, tempIndex = 0;
+        while (tempNode) {
+            if (index === tempIndex) { return tempNode.data;}
+            tempNode = tempNode.next;
+            tempIndex++;
+        }
+    }
+
+    insertAt(index, data) {
+        let tempNode = this._head, tempIndex = 0;
+        while (tempNode) {
+            if (index === tempIndex) {
+                tempNode.data = data;
+                break;
+            }
+            tempNode = tempNode.next;
+            tempIndex++;
+        }
+        return this;
 }
-
-    insertAt(index, data) {}
-
     isEmpty() {}
 
     clear() {}
