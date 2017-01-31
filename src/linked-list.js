@@ -1,85 +1,53 @@
 const Node = require('./node');
 
+
 class LinkedList {
+
     constructor() {
-    	this._length = 0;
+    	this.length = 0;
     	this.head = null;
     	this.tail = null;
     }
 
     append(data) {
-    	var node = new Node(data);
-
-    if (this._length) {
+    	var node = newNode (data);
+    	if (this.length == 0)
+    	this.tail = node
+    else 
+    	this.head.previos = node;
+        node.next = this.tail;
         this.head = node;
-        
-    } else {
-        this.head.next = node;
-        node.prev = this.head;
-        this.head = node;
-    }
-
-    this._length++;
-
-    return this;
-
-    }
-
-    head() { 
-
-    	if (this.head = data)
-    		return this.head 
-    		else (this.head = null)
-    	return this.head }
-
-    tail() {
-
-    	if (this.tail = data)
-    		return this.tail 
-    		else (this.tail = null)
-    	return this.tail }
 
 
     }
 
-    at(index) {  
-    	var temp = this.head; 
-    	for ( tempIndex = 0; tempIndex <= this.length; tempIndex ++){
-    		if (tempIndex == this.length) {
-    			return temp.data
-    			break;
-    		}
-    		 temp = temp.next;
-    	}
-    
-    }
-
-    insertAt(index, data) {
-var temp = this.head;
-    	for ( tempIndex = 0; tempIndex <= this.length; tempIndex ++){
-    		if (tempIndex == this.length) {
-    			return temp.data
-    			break;
-    		}
-    		 temp = temp.next;
-    		 temp.data = data;
-    	}
-
+    head() { if (this.head = data)
+    	return this.head
+    	else (this.head = null)
+    		return this.head
 
     }
 
-    isEmpty() { 
-    	if (this.length = 0)
-    		return true
-    	else return false;
+    tail() { if (this.tail = data)
+    	return this.tail
+    	else (this.tail = null)
+    		return this.tail}
 
-    }
+    at(index) { 
+     var current = this.head;
+     while (current.data != index) {
+     	if (current.next == null)
+     		return null;
+     	else current = current.next;
+     } 
+     return current;
+}
 
-    clear() {
-    	this._length = 0;
-    	this.head = null;
-    	this.tail = null;
-    }
+    insertAt(index, data) {}
+
+    isEmpty() {}
+
+    clear() {}
 
     deleteAt(index) {}
 
