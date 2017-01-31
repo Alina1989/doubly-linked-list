@@ -31,14 +31,16 @@ class LinkedList {
 
     tail() { return this._tail.data;}
 
-    at(index) { 
+    at(index) { var i = 0;
      var current = this._head;
-     while (current.data != index) {
+     while (i != index) {
      	if (current.next == null)
      		return null;
-     	else current = current.next;
+     	else 
+     		current = current.next;
+     	i++;
      } 
-     return current.data;
+     return current.data
 }
 
     insertAt(index, data) {}
