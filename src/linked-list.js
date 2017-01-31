@@ -11,7 +11,7 @@ class LinkedList {
 
     append(data) {
 
-           let node = new Node (data), tempNode = this._tail;
+           var node = new Node (data), tempNode = this._tail;
         if (this.length) {
             this._tail = node;
             this._tail.prev = tempNode;
@@ -21,18 +21,18 @@ class LinkedList {
             this._head = node;
         }
         this.length++;
-        return this;
+        return this._tail;
 }
 
-    head() { if (this._head = data)
-    	return this._head
+    head() { if (this._head == data)
+    	return this._head;
     	else (this._head = null)
     		return this._head
 
     }
 
-    tail() { if (this._tail = data)
-    	return this._tail
+    tail() { if (this._tail == data)
+    	return this._tail;
     	else (this._tail = null)
     		return this._tail}
 
