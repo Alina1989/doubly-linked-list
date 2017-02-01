@@ -73,10 +73,10 @@ else
     	var current = this._head;
     	var i = 0;
     	while (i!= index) {
-    	if (node == this._head)
+    	if (current == this._head)
     		return current = current.next;
-    	else current.prev.next = current.next;
-           current.next.prev = current.prev;
+    	else current.previos.next = current.next;
+           current.next.previos = current.previos;
 
            this.length--;
     }
