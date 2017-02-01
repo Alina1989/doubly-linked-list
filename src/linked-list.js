@@ -69,14 +69,17 @@ else
 
     	return this;}
 
-    deleteAt(index) { var tempNode = current.previos;
-    	var current = this._head;
+    deleteAt(index) { var node = new Node (data), 
+    	current = this._head;
     	var i = 0;
     	while (i!= index) {
     	if (current == this._head)
     		return current = current.next;
-    	else current.previos.next = current.next;
-           current.next.previos = current.previos;
+    	else current.previous.next = current.next;
+    	if (current = this._tail)
+    		current = current.previous;
+else
+           current.next.previous = current.previous;
 
            this.length--;
     }
