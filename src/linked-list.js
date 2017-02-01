@@ -52,11 +52,30 @@ class LinkedList {
      current.data = data;
      }
 
-    isEmpty() {}
+    isEmpty() { if (this.length == 0)
+    	return true;
+    	else 
+    		return false;}
 
-    clear() {}
+    clear() {this.length = 0;
+    	this._head = null;
+    	this._tail = null;}
 
-    deleteAt(index) {}
+    deleteAt(index) { var tempNode = current.previos;
+    	var current = this._head;
+    	var i = 0
+    	while (i!= index) {
+    	if (node == this._head)
+    		return current = current.next;
+    	else (current.prev.next = current.next;
+           current.next.prev = current.prev;)
+
+           this.length--;
+    }
+    i++;
+    return this;
+
+    }
 
     reverse() {}
 
