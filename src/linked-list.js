@@ -69,8 +69,8 @@ else
 
     	return this;}
 
-    deleteAt(index) { var node = new Node (data), 
-    	current = this._head;
+    deleteAt(index) { 
+    	 var current = this._head;
     	var i = 0;
     	while (i!= index) {
     	if (current == this._head)
