@@ -45,17 +45,12 @@ class LinkedList {
 
     insertAt(index, data) {var i = 0;
      var current = this._head;
-     while (i != index) {
-     	if (current.next == null)
-     		return null;
-     	else 
-     		current.data = data;
-     	break;
-     	current = current.next;
-
+     while (i = index) {
+     	if (current.data = data;)
+     		return current = current.next;
      	i++;
      } 
-     return this.append(data)}
+     }
 
     isEmpty() {}
 
