@@ -63,12 +63,12 @@ class LinkedList {
 
     deleteAt(index) { var tempNode = current.previos;
     	var current = this._head;
-    	var i = 0
+    	var i = 0;
     	while (i!= index) {
     	if (node == this._head)
     		return current = current.next;
-    	else (current.prev.next = current.next;
-           current.next.prev = current.prev;)
+    	else current.prev.next = current.next;
+           current.next.prev = current.prev;
 
            this.length--;
     }
