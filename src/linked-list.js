@@ -24,12 +24,18 @@ class LinkedList {
         return this._tail;
 }
 
-    head() { return this._head.data;
+    head() { if (!this._head)
+    	return null;
+    	else
+     return this._head.data;
     	
 
     }
 
-    tail() { return this._tail.data;}
+    tail() { if (!this._tail)
+    	return null;
+else
+    	return this._tail.data;}
 
     at(index) { var i = 0;
      var current = this._head;
@@ -57,9 +63,10 @@ class LinkedList {
     	else 
     		return false;}
 
-    clear() {this.length = 0;
+    clear() { this.length = 0;
     	this._head = null;
     	this._tail = null;
+
     	return this;}
 
     deleteAt(index) { var tempNode = current.previos;
