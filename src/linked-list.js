@@ -21,7 +21,7 @@ class LinkedList {
             this._head = node;
         }
         this.length++;
-        return this._tail;
+        return this;
 }
 
     head() { if (!this._head)
@@ -73,10 +73,9 @@ else
 
     	 var current = this._head;
     	var i = 0;
-    	while (i != index) {
-    	if (current == this._head)
-    		return current = current.next;
-    	else current.previous.next = current.next;
+    	while (i === index) {
+    	if (current.previos)
+    		current.previous.next = current.next;
     	if (current = this._tail)
     		current = current.previous;
 else
