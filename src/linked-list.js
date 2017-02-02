@@ -81,8 +81,8 @@ else
     	if (temp = this._tail)
     		temp = temp.previous;
 else
-           temp.next.previous = .previous;
-current = null;
+           temp.next.previous = temp.previous;
+temp = null;
            this.length--;
     }
     i++;
