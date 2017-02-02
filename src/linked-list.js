@@ -53,6 +53,7 @@ else
      var current = this._head;
      while (i != index) {
      	if (current = current.next);
+     	else return null;
      	i++;
      } 
      current.data = data;
@@ -70,8 +71,7 @@ else
     	return this;}
 
     deleteAt(index) { 
-
-    	 var current = this._head;
+    	current = this._head;
     	var i = 0;
     	while (i === index) {
     	if (current.previos)
