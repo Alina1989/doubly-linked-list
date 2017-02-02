@@ -71,7 +71,7 @@ else
     	return this;}
 
     deleteAt(index) { 
-    	current = this._head;
+    	 var current = this._head;
     	var i = 0;
     	while (i === index) {
     	if (current.previos)
