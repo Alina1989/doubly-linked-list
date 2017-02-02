@@ -57,7 +57,9 @@ else
      	i++;
      } 
      current.data = data;
+     return this;
      }
+
 
     isEmpty() { if (this.length == 0)
     	return true;
@@ -71,15 +73,15 @@ else
     	return this;}
 
     deleteAt(index) { 
-    	 var current = this._head;
+    	 var temp = this._head;
     	var i = 0;
     	while (i === index) {
-    	if (current.previos)
-    		current.previous.next = current.next;
-    	if (current = this._tail)
-    		current = current.previous;
+    	if (temp.previos)
+    		temp.previous.next = temp.next;
+    	if (temp = this._tail)
+    		temp = temp.previous;
 else
-           current.next.previous = current.previous;
+           temp.next.previous = .previous;
 current = null;
            this.length--;
     }
