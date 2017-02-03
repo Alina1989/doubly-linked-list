@@ -13,14 +13,15 @@ class LinkedList {
 
            var node = new Node (data); 
         if (this.length) {
-            this._tail = node;
+            this._tail.next = node;
             node.prev = this._tail;
-            this._tail.prev.next = this._tail;
+            this._tail = node;
         } else {
             this._tail = node;
             this._head = node;
         }
         this.length++;
+
         return this;
 }
 
