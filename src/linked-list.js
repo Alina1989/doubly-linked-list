@@ -77,12 +77,18 @@ else
     	 var current = this._head;
     	var i = 0;
     	while (i === index) {
-    	if (current.prev)
-    		current.prev.next = current.next;
+    		if (this.length === 0 || index < 1 || index > this.length) {
+        throw new Error(message.failure);
+    	if (i === 1)
+    		this.head = current.next;
+    	if (!this.head) {
+            this.head.previous = null;
+             } else {
+            this.tail = null;
+        }
     	if (current = this._tail)
-    		current = current.prev;
-		else current.next.prev = current.prev;
-       else  current = null;
+    		{current = current.prev;
+		    current.next.prev = current.prev;}
        this.length--; 
       i++;
 
