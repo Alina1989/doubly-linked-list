@@ -11,10 +11,10 @@ class LinkedList {
 
     append(data) {
 
-           var node = new Node (data), current = this._tail;
+           var node = new Node (data), temp = this._tail;
         if (this.length) {
-            this._tail = node;
-            this._tail.prev = current;
+            this.tail = node;
+            node.prev = temp;
             this._tail.prev.next = this._tail;
         } else {
             this._tail = node;
@@ -73,19 +73,20 @@ else
     	return this;}
 
     deleteAt(index) { 
-    	 var temp = this._head;
+    	 var current = this._head;
     	var i = 0;
     	while (i === index) {
-    	if (temp.previos)
-    		temp.previous.next = temp.next;
-    	if (temp = this._tail)
-    		temp = temp.previous;
+    	if (current.prev)
+    		current.prev.next = current.next;
+    	if (current = this._tail)
+    		current = current.prev;
 else
-           temp.next.previous = temp.previous;
-temp = null;
-           this.length--;
+           current.next.prev = current.prev;
+current = null;
+      i++;     
     }
-    i++;
+    this.length--;
+    
     return this;
 
     }
