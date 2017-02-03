@@ -11,9 +11,9 @@ class LinkedList {
 
     append(data) {
 
-           var node = new Node (data), current = this._tail;
+           var node = new Node (data), 
         if (this.length) {
-            current = node;
+            this._tail = node;
             this._tail.prev = current;
             this._tail.prev.next = this._tail;
         } else {
