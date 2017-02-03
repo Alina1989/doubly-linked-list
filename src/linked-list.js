@@ -12,7 +12,7 @@ class LinkedList {
     append(data) {
 
            var node = new Node (data), 
-        if (this.length) {
+        if (!this.length) {
             this._tail = node;
             this._tail.prev = current;
             this._tail.prev.next = this._tail;
