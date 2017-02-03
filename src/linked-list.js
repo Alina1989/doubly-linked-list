@@ -90,6 +90,7 @@ else
     		{current = current.prev;
 		    current.next.prev = current.prev;}
        this.length--; 
+       }
       i++;
 
     }
