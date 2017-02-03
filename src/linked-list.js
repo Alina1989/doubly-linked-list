@@ -14,7 +14,7 @@ class LinkedList {
            var node = new Node (data), 
         if (!this.length) {
             this._tail = node;
-            this._tail.prev = current;
+            node.prev = this._tail;
             this._tail.prev.next = this._tail;
         } else {
             this._tail = node;
