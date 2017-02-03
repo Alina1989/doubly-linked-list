@@ -41,9 +41,6 @@ else
     at(index) { var i = 0;
      var current = this._head;
      while (i != index) {
-     	if (current.next == null)
-     		return null;
-     	else 
      		current = current.next;
      	i++;
      } 
@@ -75,28 +72,24 @@ else
 
     deleteAt(index) { 
     	 var current = this._head;
-    	var i = 0;
-    	while (i === index) {
-    		if (this.length === 0 || index < 1 || index > this.length) {
-        throw new Error(message.failure);
-    	if (i === 1)
-    		this.head = current.next;
-    	if (!this.head) {
-            this.head.previous = null;
-             } else {
-            this.tail = null;
+         if (this.length === 0) 
+            return this;
+         else if (this.length === 1) {
+            this._head = this._tail = null;
+            return this;
         }
-    	if (current = this._tail)
-    		{current = current.prev;
-		    current.next.prev = current.prev;}
-       this.length--; 
+        else {
+    	var i = 0;
+    	while (i != index) {
+    		current = current.next;
+             i++;
        }
-      i++;
-
-    }
+     current.prev.next = current.next;
+     current.next.prev = current.prev;
+     this.length--;
    
     return this;
-
+}
     }
 
     reverse() {}
