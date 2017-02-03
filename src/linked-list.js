@@ -81,13 +81,13 @@ else
     		current.prev.next = current.next;
     	if (current = this._tail)
     		current = current.prev;
-else
-           current.next.prev = current.prev;
-current = null;
-      i++;     
+		else current.next.prev = current.prev;
+       else  current = null;
+       this.length--; 
+      i++;
+
     }
-    this.length--;
-    
+   
     return this;
 
     }
