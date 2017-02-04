@@ -94,7 +94,23 @@ else
 
     reverse() {}
 
-    indexOf(data) {}
+    indexOf(data) {
+        var i = 0;
+     var current = this._head;
+     while (i != index) { if (current.data === data)
+        return i
+     i++;
+            current = current.next;
+        
+            if (this.length === i)
+                return -1;
+
+     } 
+     
+
+    
+
+    }
 }
 
 
