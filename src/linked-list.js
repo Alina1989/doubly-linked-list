@@ -115,8 +115,8 @@ else
      var current = this._head;
      while (i != index) { if (current.data === data)
         return i
+            i++};
             current = current.next;
-            i++;}
         
             if (current.data != data)
                 return -1;
