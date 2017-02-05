@@ -111,15 +111,15 @@ else
     }
 
     indexOf(data) {
-        var i = 0;
-     var current = this._head;
-     while (i != index) { if (current.data === data)
-        return i
-            i++};
+                var current = this._head, index = 0;
+        while (current) {
+            if (current.data === data) {
+                return index;}
             current = current.next;
-        
-            if (current.data != data)
-                return -1;
+            index++;
+        }
+        return -1;
+    
 
      } 
      
