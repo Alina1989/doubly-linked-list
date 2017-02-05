@@ -92,17 +92,33 @@ else
 }
     }
 
-    reverse() {}
+    reverse() {
+        var current = this._tail;
+        while(current) {
+            let temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+
+            current =temp;
+        }
+
+        var temp = this._head;
+        this._head = this._tail;
+        this._tail = temp;
+
+        return this;
+
+    }
 
     indexOf(data) {
         var i = 0;
      var current = this._head;
      while (i != index) { if (current.data === data)
         return i
-     i++;
             current = current.next;
+            i++;}
         
-            if (this.length === i)
+            if (current.data != data)
                 return -1;
 
      } 
@@ -110,7 +126,7 @@ else
 
     
 
-    }
+    
 }
 
 
